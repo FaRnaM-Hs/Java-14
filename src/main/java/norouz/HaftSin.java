@@ -4,31 +4,15 @@ public class HaftSin {
 
 
     public String isHaftSin(String object) {
-        String result;
-
-        switch (object) {
-            case "Sib":
-            case "Sir":
-            case "Serke":
-            case "Senjed":
-            case "Somagh":
-            case "Samanou":
-            case "Sabze":
-                result = "Yes";
-                break;
-            case "Mahi":
-            case "Sekke":
-            case "Ayne":
-            case "Mive":
-            case "Shirini":
-            case "Saat":
-            case "Sham":
-                result = "Can be";
-                break;
-            default:
-                result = "No";
-        }
-        
-        return result;
+        return switch (object) {
+            case "Sib", "Sir", "Serke", "Senjed", "Somagh", "Samanou", "Sabze" -> "Yes";
+            case "Mahi", "Sekke", "Ayne", "Mive", "Shirini", "Saat", "Sham" -> {
+                // Some code
+                System.out.println("Maybe some objects are not present here.");
+                // Some code
+                yield "Can be";
+            }
+            default -> "No";
+        };
     }
 }
